@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+</head>
+<body>
+    <div class="w-screen h-screen flex justify-center items-center">
+        <h1 id="text" class="text-8xl font-bold">Kanugu Rajesh</h1>
+    </div>
+    <script>
+        let text = new SplitType("#text");
+        let characters = document.querySelectorAll('.char');
+        for(let i=0;i<characters.length;i++){
+            characters[i].classList.add('translate-y-full');
+        }
+
+        gsap.to('.char', {
+            duration: 1,
+            y: 0,
+            stagger: 0.05,
+            ease: 'back.out(1.7)'
+        });
+
+    </script>
+</body>
+</html>
